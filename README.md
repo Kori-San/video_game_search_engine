@@ -1,7 +1,7 @@
 # Template for the Video Game Search Engine project
 
-[![build workflow](https://github.com/lernejo/video_game_search_engine_template/actions/workflows/build.yml/badge.svg)](https://github.com/lernejo/video_game_search_engine_template/actions)
-[![codecov](https://codecov.io/gh/lernejo/video_game_search_engine_template/branch/main/graph/badge.svg)](https://codecov.io/gh/lernejo/video_game_search_engine_template)
+[![build workflow](https://github.com/lernejo/video_game_search_engine_template/actions/workflows/build.yml/badge.svg)](https://github.com/kori-san/video_game_search_engine_template/actions)
+[![codecov](https://codecov.io/gh/lernejo/video_game_search_engine_template/branch/main/graph/badge.svg)](https://codecov.io/gh/kori-san/video_game_search_engine_template)
 
 ## Build the project
 
