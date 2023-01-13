@@ -24,9 +24,7 @@ public class GameInfoListener {
 
     @RabbitListener(queues = GAME_INFO_QUEUE)
     public void onMessage(String message, @Header("game_id") String id) throws IOException {
-        IndexRequest indexRequest = new IndexRequest("games");
-        indexRequest.source(message, XContentType.JSON);
-        indexRequest.id(id);
+        IndexRequest indexRequest = new IndexRequest("games").id(id).source(message, XContentType.JSON);
         this.restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
     }
 }

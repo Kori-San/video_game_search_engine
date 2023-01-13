@@ -9,7 +9,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
@@ -19,7 +19,7 @@ public class Launcher {
         try (AbstractApplicationContext springContext = new AnnotationConfigApplicationContext(Launcher.class)) {
             if (args.length > 0){
                 ObjectMapper mapper = new ObjectMapper();
-                List<GameInfo> gameInfos = Collections.singletonList(mapper.readValue(Paths.get(args[0]).toFile(), GameInfo.class));
+                List<GameInfo> gameInfos = Arrays.asList(mapper.readValue(Paths.get(args[0]).toFile(), GameInfo[].class));
                 RabbitTemplate rabbitTemplate = springContext.getBean(RabbitTemplate.class);
                 for (GameInfo gameInfo : gameInfos) {
                     rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
